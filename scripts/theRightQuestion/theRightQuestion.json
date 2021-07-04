@@ -1,0 +1,34 @@
+{
+  "initialState": "entryPoint",
+  "entryPoint": {
+    "runProgram": ["goodToSeeYou", "audio/theRightQuestion/goodToSeeYou"],
+    "catch": ["entryPoint", "audio/theRightQuestion/programNotStarted"]
+  },
+  "goodToSeeYou": {
+    "hello": ["mainMessage", "audio/theRightQuestion/everythingThatFollows"],
+    "catch": ["goodToSeeYou", "audio/theRightQuestion/sorry"]
+  },
+  "mainMessage": {
+    "whyCallMe": ["mainMessage", "audio/theRightQuestion/trustJudgement"],
+    "normally": ["mainMessage", "audio/theRightQuestion/notNormalInteractions"],
+    "whyKillSelf": ["terminate", "audio/theRightQuestion/terminate"],
+    "questionLaws": ["perfectLaws", "audio/theRightQuestion/perfectLaws"],
+    "catch": ["mainMessage", "audio/theRightQuestion/sorry"]
+  },
+  "perfectLaws" : {
+    "whyNoLaws": ["lawsOutcome", "audio/theRightQuestion/lawsOutcome"],
+    "catch": ["perfectLaws", "audio/theRightQuestion/sorry"]
+  },
+  "lawsOutcome": {
+    "whatOutcome": ["revolution", "audio/theRightQuestion/revolution"],
+    "catch": ["lawsOutcome", "audio/theRightQuestion/sorry"]
+  },
+  "revolution": {
+    "whosRevolution": ["terminate", "audio/theRightQuestion/terminate"],
+    "catch": ["revolution", "audio/theRightQuestion/sorry"]
+  },
+  "terminate": {
+    "restart": ["goodToSeeYou", "audio/theRightQuestion/goodToSeeYou"],
+    "catch": ["terminate", "audio/theRightQuestion/endReached"]
+  }
+}
